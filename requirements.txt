@@ -1,0 +1,8 @@
+# requirements.txt
+# Add runtime dependencies here, e.g.:
+PyQt6==6.7.0
+# pipecat-ai==<version_from_tech_stack> # pipecat-ai version not specified in tech-stack.md
+# numpy==<version_from_tech_stack> # numpy version not specified in tech-stack.md
+# opencv-python==<version_from_tech_stack> # opencv-python version not specified in tech-stack.md
+# ultralytics==<version_from_tech_stack_for_yolo> # ultralytics version not specified in tech-stack.md
+# Pillow (often a dependency for vision models)

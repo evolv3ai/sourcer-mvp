@@ -1,0 +1,12 @@
+# requirements-dev.txt
+# Core dependencies for development tools
+black==24.4.2
+flake8==7.0.0
+mypy==1.10.0
+pytest==8.2.0
+pytest-mock==3.12.0
+pytest-cov
+# Add other dev dependencies like specific flake8 plugins if known
+# flake8-bugbear
+# flake8-comprehensions
+# flake8-print

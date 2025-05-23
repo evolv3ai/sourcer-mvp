@@ -1,0 +1,26 @@
+# pyproject.toml
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203" # whitespace before ':' (often conflicts with Black)
+# Add plugins if listed in requirements-dev.txt
+# e.g., select = "C,E,F,W,B,B9" 
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false # Start with false, aim for true later
+ignore_missing_imports = true # Initially true for smoother setup with many dependencies
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests/unit",
+    "tests/integration",
+]
+python_files = "test_*.py"
