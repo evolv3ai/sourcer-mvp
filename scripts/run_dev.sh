@@ -23,15 +23,16 @@ fi
 source "$PROJECT_ROOT/.venv/bin/activate"
 
 # Check if dependencies are installed
-if ! python -c "import PyQt6" 2>/dev/null; then
+if ! python3 -c "import PyQt6" 2>/dev/null; then
     echo -e "${YELLOW}Dependencies not installed. Installing...${NC}"
-    pip install -r "$PROJECT_ROOT/requirements-dev.txt"
+    pip install -r "$PROJECT_ROOT/requirements-python312.txt"
 fi
 
 # Set environment variables for development
 export PYTHONPATH="$PROJECT_ROOT/src:$PYTHONPATH"
 export DEBUG=true
 export LOG_LEVEL=DEBUG
+export QT_QPA_PLATFORM=offscreen  # For WSL compatibility
 
 # Check if models directory has content
 if [ ! "$(ls -A $PROJECT_ROOT/models 2>/dev/null)" ]; then
@@ -41,4 +42,4 @@ fi
 # Run the application
 echo -e "${GREEN}Launching Sourcer...${NC}"
 cd "$PROJECT_ROOT"
-python src/sourcer/main.py "$@"
+python3 src/sourcer/main.py "$@"

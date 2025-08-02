@@ -29,23 +29,27 @@ cd sourcer
 
 2. Create and activate a virtual environment:
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
 3. Install dependencies:
 ```bash
-pip install -r requirements.txt
+# For Python 3.12 (Ubuntu 24.04), use the compatible requirements file:
+pip install -r requirements-python312.txt
+
+# For other Python versions, try:
+# pip install -r requirements.txt
 ```
 
 4. Download AI models:
 ```bash
-python scripts/download_models.py
+python3 scripts/download_models.py
 ```
 
 5. Run the application:
 ```bash
-./scripts/run_dev.sh  # On Windows: python src/sourcer/main.py
+./scripts/run_dev.sh  # On Windows: python3 src/sourcer/main.py
 ```
 
 ## Development

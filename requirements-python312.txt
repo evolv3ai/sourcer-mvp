@@ -1,0 +1,31 @@
+# Core dependencies compatible with Python 3.12
+PyQt6>=6.7.0
+PyQt6-Qt6>=6.7.0
+PyQt6-sip>=13.8.0
+
+# Computer Vision
+opencv-python>=4.10.0
+numpy>=1.26.4
+Pillow>=10.4.0
+
+# AI Models
+ultralytics>=8.3.0  # YOLO
+transformers>=4.44.0  # For LLaVA
+torch>=2.4.0
+torchvision>=0.19.0
+
+# Voice/Audio - using compatible versions
+vosk>=0.3.45
+sounddevice>=0.5.0
+scipy>=1.14.0
+
+# Configuration
+python-dotenv>=1.0.1
+
+# Utilities
+requests>=2.32.3
+tqdm>=4.66.5
+psutil>=6.0.0
+
+# Note: piper-tts and segment-anything have Python 3.12 compatibility issues
+# These will need to be addressed separately or alternative packages used
