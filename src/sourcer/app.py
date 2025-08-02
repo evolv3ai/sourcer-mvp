@@ -36,9 +36,14 @@ class SourcerApp:
         self.app.setApplicationName(self.config.get("Application", "name"))
         self.app.setOrganizationName("Sourcer")
         
-        # Enable high DPI scaling
-        self.app.setAttribute(Qt.ApplicationAttribute.AA_EnableHighDpiScaling, True)
-        self.app.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
+        # Enable high DPI scaling (Qt6 compatible)
+        try:
+            # For Qt6, high DPI scaling is enabled by default
+            # Only set UseHighDpiPixmaps if available
+            self.app.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
+        except AttributeError:
+            # Fallback for older Qt versions
+            pass
         
         # Initialize orchestrator
         self.orchestrator = Orchestrator(self.config)
